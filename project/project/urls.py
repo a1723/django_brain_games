@@ -16,9 +16,10 @@ Including another URLconf
 
 from brain_games import views
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
-    path('', views.index),
+    path('brain_games/', views.index),
+    path('first_game/', views.game),
     path('admin/', admin.site.urls),
 ]
