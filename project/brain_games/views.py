@@ -10,7 +10,9 @@ def index(request):
             name = request.POST.get("name")
             data = {"name": name}
             return HttpResponse(render(request, "game_selection.html", context=data))
-    return render(request, "index.html", {"form": nameForm})
+    return render(request, "index.html")
 
 
-
+def game(request):
+        data = {"name": "test!"}
+        return HttpResponse(render(request, "first_game.html", context=data))
