@@ -11,6 +11,16 @@
     </title>
 </head>
 <body>
-    <p>{{name}}</p>
+    <p>Answer "yes" if the number is even, otherwise answer "no".</p>
+    <p>{{num1}}</p>
+
+    <form method = "POST" action="game_answer/">
+        {% csrf_token %}
+        <p>
+            <label>Введите ответ</label><br>
+            <input type="text" name="answer" />
+        </p>
+        <input type="submit" value="Продолжить">
+    </form>
 </body>
 </html>
