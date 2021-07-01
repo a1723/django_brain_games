@@ -29,7 +29,7 @@ def checking_game_answer(request):
         correct_answer = get_correct_answer(int(num1))
         if answer == correct_answer:
             rounds += 1
-            return HttpResponse("/first_game")
+            return HttpResponseRedirect("/first_game")
         else:
             return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer}))
     return HttpResponse(render(request, "game_congrats.html"))
