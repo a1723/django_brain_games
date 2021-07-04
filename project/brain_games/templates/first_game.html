@@ -11,10 +11,12 @@
     </title>
 </head>
 <body>
-    <p>Answer "yes" if the number is even, otherwise answer "no".</p>
+    <p>Answer "yes" if the number is even, otherwise answer "no".    </p>
+    <p>You win if u give three correct answers.</p> 
 
 
-    <form method = "POST" action="checking_game_answer/">
+
+    <form method = "POST" action="checking-game-answer/">
         {% csrf_token %}
         <p>{{num1}}</p>
         <p>
@@ -23,6 +25,7 @@
         </p>
         <input type="submit" value="Продолжить">
         <input type="hidden" name="num1" value={{num1}}>
+        <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
 </body>
 </html>
