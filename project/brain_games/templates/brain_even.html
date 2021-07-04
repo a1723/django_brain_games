@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}    
-        first_game
-        {% endblock %}
-    </title>
-</head>
+{% extends "base_template.html" %}
+
+{% block title %} <h2>Brain even</h2> {% endblock %}
+{% block content %}
 <body>
     <p>Answer "yes" if the number is even, otherwise answer "no".    </p>
     <p>You win if u give three correct answers.</p> 
 
-
-
-    <form method = "POST" action="checking-game-answer/">
+    <form method = "POST" action="checking-brain-even-game-answer/">
         {% csrf_token %}
         <p>{{num1}}</p>
         <p>
@@ -29,3 +19,6 @@
     </form>
 </body>
 </html>
+{% endblock %}
+
+

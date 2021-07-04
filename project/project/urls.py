@@ -21,7 +21,15 @@ from django.urls import include, path
 urlpatterns = [
     path('', views.index), 
     path('game-selection/', views.game_selection),
-    path('first-game/', views.first_game),
-    path('first-game/checking-game-answer/', views.checking_game_answer),
+    path('brain-even/', views.brain_even),
+    path('brain-calc/', views.brain_calc),
+    path('brain-gcd/', views.brain_gcd),
+    path('brain-prime/', views.brain_prime),
+    path('brain-progression/', views.brain_progression),
+    path('brain-even/checking-brain-even-game-answer/', views.checking_brain_even_game_answer),
+    path('brain-calc/checking-brain-calc-game-answer/', views.checking_brain_calc_game_answer),
+    path('brain-gcd/checking-brain-gcd-game-answer/', views.checking_brain_gcd_game_answer),
+    path('brain-prime/checking-brain-prime-game-answer/', views.checking_brain_prime_game_answer),
+    path('brain-progression/checking-brain-progression-game-answer/', views.checking_brain_progression_game_answer),
     path('admin/', admin.site.urls),
 ]
