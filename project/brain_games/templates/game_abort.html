@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}    
-            Game result
-        {% endblock %}
-    </title>
+{% extends "base_template.html" %}
+
+{% block title %} <h2>Game result</h2> {% endblock %}
+{% block content %}
 </head>
 <body>
     <p>ur answer is <b>{{answer}}</b>. Correct answer was <b>{{correct_answer}}</b></p>
+    <a href="/"> You want to play once more?</a>
+    <p><b>Your correct answers:</b> {{rounds}} </p>
 </body>
 </html>
-
+{% endblock %}

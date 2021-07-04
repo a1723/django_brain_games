@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+
+{% block title %} <h2>Brain gcd</h2> {% endblock %}
+{% block content %}
+<body>
+    <p>Find the greatest common divisor of given numbers.</p>
+    <p>You win if u give three correct answers.</p> 
+
+    <form method = "POST" action="checking-brain-gcd-game-answer/">
+        {% csrf_token %}
+        <p>{{num1}} {{num2}}</p>
+        <p>
+            <label>Введите ответ</label><br>
+            <input type="text" name="answer" />
+        </p>
+        <input type="submit" value="Продолжить">
+        <input type="hidden" name="num1" value={{num1}}>
+        <input type="hidden" name="num2" value={{num2}}>
+        <p><b>Your correct answers:</b> {{rounds}} </p>
+    </form>
+</body>
+</html>
+{% endblock %}
+
+

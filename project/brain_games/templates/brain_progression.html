@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+
+{% block title %} <h2>Brain progression</h2> {% endblock %}
+{% block content %}
+<body>
+    <p>What number is missing in the progression?</p>
+    <p>You win if u give three correct answers.</p> 
+
+    <form method = "POST" action="checking-brain-progression-game-answer/">
+        {% csrf_token %}
+        <p>{{changed_progression}}</p>
+        <p>
+            <label>Введите ответ</label><br>
+            <input type="text" name="answer" />
+        </p>
+        <input type="submit" value="Продолжить">
+        <input type="hidden" name="progression" value={{progression}}>
+        <input type="hidden" name="element_val" value={{element_val}}>
+        <p><b>Your correct answers:</b> {{rounds}} </p>
+    </form>
+</body>
+</html>
+{% endblock %}
+
+
