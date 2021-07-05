@@ -3,17 +3,19 @@
 {% block title %} <h2>Brain prime</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>{{name}}, Answer "yes" if given number is prime. Otherwise answer "no".</p>
+    <p class="lead">{{name}}, Answer "yes" if given number is prime. Otherwise answer "no".</p>
     <p>You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-prime-game-answer/">
         {% csrf_token %}
-        <p>{{num}}</p>
-        <p>
-            <label>Введите ответ</label><br>
-            <input type="text" name="answer" />
-        </p>
-        <input type="submit" value="Продолжить">
+        <div class="form-floating mb-3">
+            <p>Game task: {{num}}</p>
+            <p>
+                <label>Введите ответ</label><br>
+                <input type="text" name="answer" />
+            </p>
+        </div>
+        <button type="submit" class="btn btn-success">Продолжить</button>
         <input type="hidden" name="num" value={{num}}>
         <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>

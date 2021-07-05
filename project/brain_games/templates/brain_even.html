@@ -3,17 +3,19 @@
 {% block title %} <h2>Brain even</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>{{name}}, Answer "yes" if the number is even, otherwise answer "no".    </p>
-    <p>You win if u give three correct answers.</p> 
+    <p class="lead">{{name}}, Answer "yes" if the number is even, otherwise answer "no". <br>
+    You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-even-game-answer/">
         {% csrf_token %}
-        <p>{{num1}}</p>
-        <p>
-            <label>Введите ответ</label><br>
-            <input type="text" name="answer" />
-        </p>
-        <input type="submit" value="Продолжить">
+        <div class="form-floating mb-3">
+            <p><b>Game task: {{num1}}</b></p>
+            <p>
+                <label>Введите ответ</label><br>
+                <input type="text" name="answer" />
+            </p>
+        </div>
+        <button type="submit" class="btn btn-success">Продолжить</button>
         <input type="hidden" name="num1" value={{num1}}>
         <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>

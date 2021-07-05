@@ -3,12 +3,14 @@
 {% block title %} <h2>Brain games</h2> {% endblock %}
 {% block content %}
 <body>
-    <p><b>Hello, {{name}}, choose the game:</b></p>
-    <p><a href="/brain-even">brain-even</a><br></p>
-    <p><a href="/brain-calc">brain-calc</a><br></p>
-    <p><a href="/brain-gcd">brain-gcd</a><br></p>
-    <p><a href="/brain-prime">brain-prime</a><br></p>
-    <p><a href="/brain-progression">brain-progression</a></p>
+    <p class="lead"><b>Hello, {{name}} choose the game:</b></p>
+    <ul>
+        <li><p><a href="/brain-even">brain-even</a><br></p></li>
+        <li><p><a href="/brain-calc">brain-calc</a><br></p></li>
+        <li><p><a href="/brain-gcd">brain-gcd</a><br></p></li>
+        <li><p><a href="/brain-prime">brain-prime</a><br></p></li>
+        <li><p><a href="/brain-progression">brain-progression</a></p></li>
+    </ul>
     <input type="hidden" name="name" value={{name}}>
 </body>
 </html>

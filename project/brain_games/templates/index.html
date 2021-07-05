@@ -1,15 +1,15 @@
 {% extends "base_template.html" %}
 
-{% block title %} <h2>Brain games</h2> {% endblock %}
-{% block content %}
 <body>
+    {% block title %} <h2>Brain games</h2> {% endblock %}
+    {% block content %}
     <form method = "POST" action="game-selection/">
         {% csrf_token %}
-        <p>
-            <label>Введите имя</label><br>
-            <input type="text" name="name" />
-        </p>
-        <input required type="submit" value="Продолжить">
+        <div class="form-floating mb-3">
+            <label class="fcol-sm-2 col-form-label">Введите имя:</label>
+            <input class="form-text" placeholder="Petr" type="text" name="name" />
+        </div>
+        <button type="submit" class="btn btn-success">Продолжить</button>
     </form>
 </body>
 </html>
