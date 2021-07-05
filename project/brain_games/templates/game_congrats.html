@@ -3,7 +3,7 @@
 {% block title %} <h2>Game result</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>{{name}}, Congrats, u win!</p>
+    <p class="lead">{{name}}, Congrats, u win!</p>
     <a href="/game-selection"> You want to play once more?</a>
     <input type="hidden" name="name" value={{name}}>
 </body>
