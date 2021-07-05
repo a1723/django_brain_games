@@ -24,7 +24,7 @@ def get_changed_progression(progression, element_val):
 
 def checking_brain_progression_game_answer(request):
     rounds = request.session.get('rounds', 0)
-    #name = get_user_name(request)
+    name = get_name(request)
     while rounds < MAX_ROUNDS:
         progression = request.POST.get("progression")
         answer = AnswerForm()
@@ -35,7 +35,8 @@ def checking_brain_progression_game_answer(request):
             return HttpResponseRedirect("/brain-progression")
         else:
             request.session['rounds'] = 0
-            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds}))
+            name = get_name(request)
+            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds, "name": name}))
     del request.session['rounds']
     rounds = request.session.get('rounds', 0)
-    return HttpResponse(render(request, "game_congrats.html"))
+    return HttpResponse(render(request, "game_congrats.html", context={"name": name}))

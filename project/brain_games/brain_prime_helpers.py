@@ -25,7 +25,7 @@ def get_number_divisors(num):
 
 def checking_brain_prime_game_answer(request):
     rounds = request.session.get('rounds', 0)
-    #name = get_user_name(request)
+    name = get_name(request)
     while rounds < MAX_ROUNDS:
         num = generate_number()
         result_values = get_number_divisors(num)
@@ -37,8 +37,9 @@ def checking_brain_prime_game_answer(request):
             return HttpResponseRedirect("/brain-prime")
         else:
             request.session['rounds'] = 0
-            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds}))
+            name = get_name(request)
+            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds, "name": name}))
     del request.session['rounds']
-    return HttpResponse(render(request, "game_congrats.html"))
+    return HttpResponse(render(request, "game_congrats.html", context={"name": name}))
 
 

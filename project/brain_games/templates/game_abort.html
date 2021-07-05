@@ -4,9 +4,10 @@
 {% block content %}
 </head>
 <body>
-    <p>ur answer is <b>{{answer}}</b>. Correct answer was <b>{{correct_answer}}</b></p>
-    <a href="/"> You want to play once more?</a>
+    <p>{{name}}, ur answer is <b>{{answer}}</b>. Correct answer was <b>{{correct_answer}}</b></p>
+    <a href="/game-selection"> You want to play once more?</a>
     <p><b>Your correct answers:</b> {{rounds}} </p>
+    <input type="hidden" name="name" value={{name}}>
 </body>
 </html>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %} <h2>Brain progression</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>What number is missing in the progression?</p>
+    <p>{{name}}, What number is missing in the progression?</p>
     <p>You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-progression-game-answer/">
@@ -16,6 +16,7 @@
         <input type="submit" value="Продолжить">
         <input type="hidden" name="progression" value={{progression}}>
         <input type="hidden" name="element_val" value={{element_val}}>
+        <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
 </body>

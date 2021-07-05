@@ -3,7 +3,7 @@
 {% block title %} <h2>Brain prime</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>Answer "yes" if given number is prime. Otherwise answer "no".</p>
+    <p>{{name}}, Answer "yes" if given number is prime. Otherwise answer "no".</p>
     <p>You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-prime-game-answer/">
@@ -15,6 +15,7 @@
         </p>
         <input type="submit" value="Продолжить">
         <input type="hidden" name="num" value={{num}}>
+        <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
 </body>
