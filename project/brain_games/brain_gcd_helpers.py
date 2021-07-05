@@ -16,7 +16,7 @@ def get_brain_gcd_correct_answer(num1, num2):   # проверяем число 
 
 def checking_brain_gcd_game_answer(request):
     rounds = request.session.get('rounds', 0)
-    #name = get_user_name(request)
+    name = get_name(request)
     while rounds < MAX_ROUNDS:
         num1 = request.POST.get("num1")
         num2 = request.POST.get("num2")
@@ -28,7 +28,8 @@ def checking_brain_gcd_game_answer(request):
             return HttpResponseRedirect("/brain-gcd")
         else:
             request.session['rounds'] = 0
-            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds}))
+            name = get_name(request)
+            return HttpResponse(render(request, "game_abort.html", context={"correct_answer":correct_answer, "answer": answer, "rounds": rounds, "name": name}))
     del request.session['rounds']
     rounds = request.session.get('rounds', 0)
-    return HttpResponse(render(request, "game_congrats.html"))
+    return HttpResponse(render(request, "game_congrats.html", context={"name": name}))

@@ -3,7 +3,7 @@
 {% block title %} <h2>Brain calc</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>What is the result of the expression?</p>
+    <p>{{name}}, What is the result of the expression?</p>
     <p>You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-calc-game-answer/">
@@ -17,6 +17,7 @@
         <input type="hidden" name="num1" value={{num1}}>
         <input type="hidden" name="num2" value={{num2}}>
         <input type="hidden" name="operation_type" value={{operation_type}}>
+        <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
 </body>

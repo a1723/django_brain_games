@@ -3,7 +3,7 @@
 {% block title %} <h2>Brain gcd</h2> {% endblock %}
 {% block content %}
 <body>
-    <p>Find the greatest common divisor of given numbers.</p>
+    <p>{{name}}, Find the greatest common divisor of given numbers.</p>
     <p>You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-gcd-game-answer/">
@@ -16,6 +16,7 @@
         <input type="submit" value="Продолжить">
         <input type="hidden" name="num1" value={{num1}}>
         <input type="hidden" name="num2" value={{num2}}>
+        <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
 </body>
