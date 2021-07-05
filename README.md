@@ -14,7 +14,7 @@ Visit http://127.0.0.1:8000
 
 
 ### TO-DO:
-~~ How can i send "name" from one views to template and to another view ? Using models ?!!! ~~
+- How can i send "name" from one views to template and to another view ? Using models ?!!!
 - make design
 - name can't be empty (check it in model ?)
 - Make single template for all games
