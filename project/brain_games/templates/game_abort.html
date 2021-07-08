@@ -1,13 +1,16 @@
 {% extends "base_template.html" %}
 
 {% block title %} <h2>Game result</h2> {% endblock %}
-{% block content %}
-</head>
-<body>
-    <p class="lead">{{name}}, ur answer is <b>{{answer}}</b>. Correct answer was <b>{{correct_answer}}</b></p>
-    <a href="/game-selection"> You want to play once more?</a>
-    <p><b>Your correct answers:</b> {{rounds}} </p>
-    <input type="hidden" name="name" value={{name}}>
+
+
+<body class="text-center">
+    <main class="form-games">
+        {% block content %}
+        <p class="lead"><strong>{{name}}</strong>, ur answer is <b>{{answer}}</b>. Correct answer was <b>{{correct_answer}}</b></p>
+        <a href="/game-selection"> You want to play once more?</a>
+        <p><b>Your correct answers:</b> {{rounds}} </p>
+        <input type="hidden" name="name" value={{name}}>
+    </main>
 </body>
 </html>
 {% endblock %}

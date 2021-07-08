@@ -1,11 +1,13 @@
 {% extends "base_template.html" %}
 
 {% block title %} <h2>Game result</h2> {% endblock %}
-{% block content %}
-<body>
-    <p class="lead">{{name}}, Congrats, u win!</p>
-    <a href="/game-selection"> You want to play once more?</a>
-    <input type="hidden" name="name" value={{name}}>
+
+<body class="text-center">
+    <main class="form-games">
+        {% block content %}
+        <p class="lead"><strong>{{name}}</strong>, Congrats, u win!</p>
+        <a href="/game-selection"> You want to play once more?</a>
+        <input type="hidden" name="name" value={{name}}>
+    </main>
 </body>
-</html>
 {% endblock %}
