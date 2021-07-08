@@ -1,15 +1,15 @@
 {% extends "base_template.html" %}
 
-{% block title %} <h2>Brain games</h2> {% endblock %}
+{% block title %}{% endblock %}
 {% block content %}
 <body>
-    <p class="lead"><b>Hello, {{name}} choose the game:</b></p>
-    <ul>
-        <li><p><a href="/brain-even">brain-even</a><br></p></li>
-        <li><p><a href="/brain-calc">brain-calc</a><br></p></li>
-        <li><p><a href="/brain-gcd">brain-gcd</a><br></p></li>
-        <li><p><a href="/brain-prime">brain-prime</a><br></p></li>
-        <li><p><a href="/brain-progression">brain-progression</a></p></li>
+    <p class="lead"><h3>Hello, <strong>{{name}}</strong> choose the game:</h3></p>
+    <ul class="list-group">
+        <li class="list-group-item"><p><a href="/brain-even" class="stretched-link">brain-even</a><br></p></li>
+        <li class="list-group-item"><p><a href="/brain-calc" class="stretched-link">brain-calc</a><br></p></li>
+        <li class="list-group-item"><p><a href="/brain-gcd" class="stretched-link">brain-gcd</a><br></p></li>
+        <li class="list-group-item"><p><a href="/brain-prime" class="stretched-link">brain-prime</a><br></p></li>
+        <li class="list-group-item"><p><a href="/brain-progression" class="stretched-link">brain-progression</a></p></li>
     </ul>
     <input type="hidden" name="name" value={{name}}>
 </body>

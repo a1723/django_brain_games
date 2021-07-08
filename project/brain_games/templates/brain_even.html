@@ -1,27 +1,34 @@
 {% extends "base_template.html" %}
 
 {% block title %} <h2>Brain even</h2> {% endblock %}
-{% block content %}
-<body>
-    <p class="lead">{{name}}, Answer "yes" if the number is even, otherwise answer "no". <br>
+
+<body class="text-center">
+
+    <main class="form-games">
+    {% block content %}
+    <p class="lead"><strong>{{name}}</strong>, Answer "yes" if the number is even,<br> otherwise answer "no". <br>
     You win if u give three correct answers.</p> 
 
     <form method = "POST" action="checking-brain-even-game-answer/">
         {% csrf_token %}
-        <div class="form-floating mb-3">
-            <p><b>Game task: {{num1}}</b></p>
+        <div class="form-floating">
+            <h3><b>Game task: {{num1}}</b></h3>
             <p>
-                <label>Введите ответ</label><br>
-                <input type="text" name="answer" />
+                <label>Введите ответ:</label>
+                <input class="form-control" id="floatingInput" placeholder="answer" type="text" name="answer" />
             </p>
         </div>
-        <button type="submit" class="btn btn-success">Продолжить</button>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Продолжить</button>
+        <br>
+        <br>
         <input type="hidden" name="num1" value={{num1}}>
         <input type="hidden" name="name" value={{name}}>
         <p><b>Your correct answers:</b> {{rounds}} </p>
     </form>
+    </main>
 </body>
-</html>
 {% endblock %}
+
 
 
