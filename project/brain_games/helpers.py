@@ -1,7 +1,5 @@
 import random
 
-from brain_games.models import * 
-
 MAX_ROUNDS = 2
 
 
@@ -20,6 +18,7 @@ def generate_progression():
     for i in range(1, 100, step):
         progression.append(i)
     return progression
+
 
 def get_name(request):
     name = request.session.get('name', '')

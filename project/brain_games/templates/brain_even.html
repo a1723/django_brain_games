@@ -9,7 +9,7 @@
     <p class="lead"><strong>{{name}}</strong>, Answer "yes" if the number is even,<br> otherwise answer "no". <br>
     You win if u give three correct answers.</p> 
 
-    <form method = "POST" action="checking-brain-even-game-answer/">
+    <form method = "POST" action="even-check/">
         {% csrf_token %}
         <div class="form-floating">
             <h3><b>Game task: {{num1}}</b></h3>

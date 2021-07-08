@@ -16,20 +16,20 @@ Including another URLconf
 
 from brain_games import views
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
 
 urlpatterns = [
-    path('', views.index), 
+    path('', views.index),
     path('game-selection/', views.game_selection),
-    path('brain-even/', views.brain_even),
-    path('brain-calc/', views.brain_calc),
-    path('brain-gcd/', views.brain_gcd),
-    path('brain-prime/', views.brain_prime),
-    path('brain-progression/', views.brain_progression),
-    path('brain-even/checking-brain-even-game-answer/', views.checking_brain_even_game_answer),
-    path('brain-calc/checking-brain-calc-game-answer/', views.checking_brain_calc_game_answer),
-    path('brain-gcd/checking-brain-gcd-game-answer/', views.checking_brain_gcd_game_answer),
-    path('brain-prime/checking-brain-prime-game-answer/', views.checking_brain_prime_game_answer),
-    path('brain-progression/checking-brain-progression-game-answer/', views.checking_brain_progression_game_answer),
+    path('even/', views.even),
+    path('calc/', views.calc),
+    path('gcd/', views.gcd),
+    path('prime/', views.prime),
+    path('progression/', views.progression),
+    path('even/even-check/', views.even_check),
+    path('calc/calc-check/', views.calc_check),
+    path('gcd/gcd-check/', views.gcd_check),
+    path('prime/prime-check/', views.prime_check),
+    path('progression/progression-check/', views.progression_check),
     path('admin/', admin.site.urls),
 ]

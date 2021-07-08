@@ -9,7 +9,7 @@
     <p class="lead"><strong>{{name}}</strong>, Find the greatest common divisor of given numbers. <br>
     You win if u give three correct answers.</p> 
 
-    <form method = "POST" action="checking-brain-gcd-game-answer/">
+    <form method = "POST" action="gcd-check/">
         {% csrf_token %}
         <div class="form-floating">
             <h3><p>Game task: {{num1}} {{num2}}</p></h3>
