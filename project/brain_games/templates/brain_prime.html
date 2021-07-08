@@ -9,7 +9,7 @@
     <p class="lead"><strong>{{name}}</strong>, Answer "yes" if given number is prime. Otherwise answer "no". <br>
     You win if u give three correct answers.</p> 
 
-    <form method = "POST" action="checking-brain-prime-game-answer/">
+    <form method = "POST" action="prime-check/">
         {% csrf_token %}
         <div class="form-floating">
             <h3><b>Game task: {{num}}</b></h3>

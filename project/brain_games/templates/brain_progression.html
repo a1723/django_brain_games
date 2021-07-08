@@ -9,7 +9,7 @@
         <p class="lead"><strong>{{name}}</strong>, What number is missing in the progression? <br>
         You win if u give three correct answers.</p> 
 
-        <form method = "POST" action="checking-brain-progression-game-answer/">
+        <form method = "POST" action="progression-check/">
             {% csrf_token %}
             <div class="form-floating">
                 <h3><b>Game task: {{changed_progression}}</b></h3>
