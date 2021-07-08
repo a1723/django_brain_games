@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'brain_games',
-    'crispy_forms'
+    'brain_games'
 ]
 
 MIDDLEWARE = [
